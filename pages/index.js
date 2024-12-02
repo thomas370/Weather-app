@@ -32,8 +32,8 @@ export const App = () => {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
-                    latitudeInput: (latitudeInput), // Convertir en nombre
-                    longitudeInput: (longitudeInput), // Convertir en nombre
+                    latitudeInput: (latitudeInput),
+                    longitudeInput: (longitudeInput),
                 }),
             });
 

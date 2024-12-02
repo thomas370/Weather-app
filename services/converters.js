@@ -34,10 +34,9 @@ export const degToCompass = (num) => {
 
 export const isoToLocalTime = (isoString) => {
   const localTime = new Date(isoString);
-  localTime.setSeconds(localTime.getSeconds());
 
-  const hours = String(localTime.getHours()).padStart(2, '0'); //passer la date/heure en format heure / second
-  const minutes = String(localTime.getMinutes()).padStart(2, '0');
+  const hours = String(localTime.getHours()).padStart(2, '0'); // Récupère l'heure et l'affiche avec 2 chiffres
+  const minutes = String(localTime.getMinutes()).padStart(2, '0');// Récupère les minutes et l'affiche avec 2 chiffres
 
-  return `${hours}:${minutes}`;
+  return `${hours}:${minutes}`; //revoie l'heure en format heures minutes
 };
