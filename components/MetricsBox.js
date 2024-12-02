@@ -12,7 +12,7 @@ export const MetricsBox = ({ weatherData, unitSystem }) => {
             <MetricsCard
                 title={"Humidity"}
                 iconSrc={"/icons/humidity.png"}
-                metric={weatherData.current_weather.humidity}
+                metric={weatherData?.current_weather?.humidity|| "N/A"}
                 unit={"%"}
             />
             <MetricsCard
@@ -29,8 +29,8 @@ export const MetricsBox = ({ weatherData, unitSystem }) => {
             <MetricsCard
                 title={"Visibility"}
                 iconSrc={"/icons/binocular.png"}
-                metric={getVisibility(unitSystem,  weatherData.current_weather.visibility)}
-                unit={unitSystem == "metric" ? "km" : "miles"} //affiche NaN car je n'ai pas la data dans cette nouvelle api
+                metric={getVisibility(unitSystem,  weatherData?.current_weather.visibility)|| "N/A"}
+                unit={unitSystem == "metric" ? "km" : "miles"}
             />
             <MetricsCard
                 title={"Sunrise"}

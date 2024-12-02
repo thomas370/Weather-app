@@ -19,7 +19,7 @@ export const App = () => {
 
   // Fonction pour récupérer les données de l'API
     const getData = async () => {
-        if (!latitudeInput || !longitudeInput) {
+        if (!latitudeInput || !longitudeInput) { //verifi si la longitude et latitude sont la
             console.error("Latitude or longitude is missing");
             return;
         }
@@ -27,13 +27,13 @@ export const App = () => {
         try {
             console.log("Sending latitude:", latitudeInput);
             console.log("Sending longitude:", longitudeInput);
-
+            // Effectue une requête POST vers l'API "/api/data" avec les données de latitude et longitude
             const res = await fetch("/api/data", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({
-                    latitudeInput: parseFloat(latitudeInput), // Convertir en nombre
-                    longitudeInput: parseFloat(longitudeInput), // Convertir en nombre
+                    latitudeInput: (latitudeInput), // Convertir en nombre
+                    longitudeInput: (longitudeInput), // Convertir en nombre
                 }),
             });
 
@@ -42,7 +42,7 @@ export const App = () => {
                 throw new Error(`API request failed: ${error.error}`);
             }
 
-      const data = await res.json();
+      const data = await res.json();// Convertit la réponse de l'API en format JSON
       setWeatherData(data);
       console.log(data)
 
@@ -56,7 +56,7 @@ export const App = () => {
     }
   };
 
-  useEffect(() => {
+  useEffect(() => { //a chaque changement il met a jour la data
 
       getData();
 
