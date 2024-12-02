@@ -73,8 +73,8 @@ export const App = () => {
         <MainCard
             city={Data.City}
             country={Data.Country}
-            description={weatherData?.current_weather?.weathercode || "N/A"}
-            iconName={weatherData?.current_weather?.weathercode || "N/A"}
+            description={weatherData?.current_weather?.weathercode || "NaN"}
+            iconName={weatherData?.current_weather?.weathercode || "NaN"}
             unitSystem={unitSystem}
             weatherData={weatherData}
         />

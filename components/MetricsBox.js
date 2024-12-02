@@ -12,7 +12,7 @@ export const MetricsBox = ({ weatherData, unitSystem }) => {
             <MetricsCard
                 title={"Humidity"}
                 iconSrc={"/icons/humidity.png"}
-                metric={weatherData?.current_weather?.humidity|| "N/A"}
+                metric={weatherData?.current_weather?.humidity|| "NaN"}
                 unit={"%"}
             />
             <MetricsCard
@@ -29,7 +29,7 @@ export const MetricsBox = ({ weatherData, unitSystem }) => {
             <MetricsCard
                 title={"Visibility"}
                 iconSrc={"/icons/binocular.png"}
-                metric={getVisibility(unitSystem,  weatherData?.current_weather.visibility)|| "N/A"}
+                metric={getVisibility(unitSystem,  weatherData?.current_weather.visibility)|| "NaN"}
                 unit={unitSystem == "metric" ? "km" : "miles"}
             />
             <MetricsCard
