@@ -3,8 +3,8 @@ export default async function handler(req, res) {
     console.log("Request Body:", req.body); 
 
     const { latitudeInput, longitudeInput } = req.body;
-    const latitude = parseFloat(latitudeInput); //conversion de la longitude et la latitude en nombre 
-    const longitude = parseFloat(longitudeInput);
+    const latitude = (latitudeInput);
+    const longitude = (longitudeInput);
 
     if (isNaN(latitude) || isNaN(longitude)) { //verification si la longitude et la lantitude et un nombre 
       return res.status(400).json({ error: 'Invalid input: latitude and longitude must be numbers' });
